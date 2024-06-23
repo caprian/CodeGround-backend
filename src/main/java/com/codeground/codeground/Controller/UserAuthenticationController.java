@@ -22,19 +22,19 @@ public class UserAuthenticationController {
     private UserService userAuth;
 
     @GetMapping("/allusers")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = { "https://codeground-5c6f7.web.app", "http://localhost:3000" })
     public List<UserModel> getAllUserStrings() {
         return userAuth.getAllUsers();
     }
 
     @PostMapping("/register")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = { "https://codeground-5c6f7.web.app", "http://localhost:3000" })
     public ResponseEntity<String> registerUser(@RequestBody UserModel user) {
         return userAuth.registerUser(user);
     }
 
     @PostMapping("/login")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = { "https://codeground-5c6f7.web.app", "http://localhost:3000" })
     public ResponseEntity<String> authUsers(@RequestBody AuthRequest authRequest) {
         return userAuth.authenticateUser(authRequest.getEmailId(), authRequest.getPassword());
     }
