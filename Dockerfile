@@ -8,6 +8,8 @@ EXPOSE 8080
 ENTRYPOINT ["java","-jar","codeground.jar"]
 
 
+
+
 # # First stage: Build the application
 # FROM maven:3.9.4-openjdk-22.ea-b17 AS build
 
