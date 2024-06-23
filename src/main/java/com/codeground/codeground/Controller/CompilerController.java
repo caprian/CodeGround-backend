@@ -17,7 +17,7 @@ public class CompilerController {
     private CompilerService compilerService;
 
     @PostMapping("/java")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = { "https://codeground-5c6f7.web.app", "http://localhost:3000" })
     public String compileAndExecuteJavaCode(@RequestBody String javaCode) {
         return compilerService.compileAndExecuteJavaCode(javaCode);
     }
